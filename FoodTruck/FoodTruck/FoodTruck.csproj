@@ -107,6 +107,10 @@
     <Content Include="About.aspx" />
     <Content Include="AddFood.aspx" />
     <Content Include="Admin.aspx" />
+    <Content Include="App_Data\food-truck.mdf" />
+    <Content Include="App_Data\food-truck_log.ldf">
+      <DependentUpon>food-truck.mdf</DependentUpon>
+    </Content>
     <Content Include="Home.aspx" />
     <Content Include="Images\bacon.jpg" />
     <Content Include="Images\fire.png" />
