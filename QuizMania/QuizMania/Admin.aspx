@@ -3,35 +3,49 @@
     <center>
     <br />
         <br />
-        <asp:GridView ID="GridView1" runat="server" AutoGenerateColumns="False" DataKeyNames="id" DataSourceID="sds_users" AllowPaging="True" AllowSorting="True" ForeColor="Black">
+        <asp:GridView ID="GridView1" runat="server" AutoGenerateColumns="False" DataKeyNames="UserId" DataSourceID="sds_users" AllowPaging="True" AllowSorting="True" ForeColor="#333333" CellPadding="4" GridLines="None">
+            <AlternatingRowStyle BackColor="White" />
     <Columns>
         <asp:CommandField ShowDeleteButton="True" ShowEditButton="True" />
-        <asp:BoundField DataField="id" HeaderText="id" InsertVisible="False" ReadOnly="True" SortExpression="id" />
-        <asp:BoundField DataField="name" HeaderText="name" SortExpression="name" />
-        <asp:BoundField DataField="password" HeaderText="password" SortExpression="password" />
-        <asp:BoundField DataField="email" HeaderText="email" SortExpression="email" />
-        <asp:BoundField DataField="score" HeaderText="score" SortExpression="score" />
-        <asp:BoundField DataField="achievements" HeaderText="achievements" SortExpression="achievements" />
+        <asp:BoundField DataField="UserId" HeaderText="UserId" ReadOnly="True" SortExpression="UserId" />
+        <asp:BoundField DataField="ScoreId" HeaderText="ScoreId" SortExpression="ScoreId" />
+        <asp:BoundField DataField="AchievementId" HeaderText="AchievementId" SortExpression="AchievementId" />
+        <asp:BoundField DataField="Username" HeaderText="Username" SortExpression="Username" />
+        <asp:BoundField DataField="Password" HeaderText="Password" SortExpression="Password" />
+        <asp:BoundField DataField="Email" HeaderText="Email" SortExpression="Email" />
+        <asp:BoundField DataField="Level" HeaderText="Level" SortExpression="Level" />
     </Columns>
+            <FooterStyle BackColor="#990000" Font-Bold="True" ForeColor="White" />
+            <HeaderStyle BackColor="#990000" Font-Bold="True" ForeColor="White" />
+            <PagerStyle BackColor="#FFCC66" ForeColor="#333333" HorizontalAlign="Center" />
+            <RowStyle BackColor="#FFFBD6" ForeColor="#333333" />
+            <SelectedRowStyle BackColor="#FFCC66" Font-Bold="True" ForeColor="Navy" />
+            <SortedAscendingCellStyle BackColor="#FDF5AC" />
+            <SortedAscendingHeaderStyle BackColor="#4D0000" />
+            <SortedDescendingCellStyle BackColor="#FCF6C0" />
+            <SortedDescendingHeaderStyle BackColor="#820000" />
 </asp:GridView>
-<asp:SqlDataSource ID="sds_users" runat="server" ConnectionString="<%$ ConnectionStrings:QuizConnection %>" SelectCommand="SELECT * FROM [Users]" DeleteCommand="DELETE FROM [Users] WHERE [id] = @id" InsertCommand="INSERT INTO [Users] ([name], [password], [email], [score], [achievements]) VALUES (@name, @password, @email, @score, @achievements)" UpdateCommand="UPDATE [Users] SET [name] = @name, [password] = @password, [email] = @email, [score] = @score, [achievements] = @achievements WHERE [id] = @id">
+<asp:SqlDataSource ID="sds_users" runat="server" ConnectionString="<%$ ConnectionStrings:DefaultConnection %>" SelectCommand="SELECT * FROM [User]" DeleteCommand="DELETE FROM [User] WHERE [UserId] = @UserId" InsertCommand="INSERT INTO [User] ([UserId], [ScoreId], [AchievementId], [Username], [Password], [Email], [Level]) VALUES (@UserId, @ScoreId, @AchievementId, @Username, @Password, @Email, @Level)" UpdateCommand="UPDATE [User] SET [ScoreId] = @ScoreId, [AchievementId] = @AchievementId, [Username] = @Username, [Password] = @Password, [Email] = @Email, [Level] = @Level WHERE [UserId] = @UserId">
     <DeleteParameters>
-        <asp:Parameter Name="id" Type="Int32" />
+        <asp:Parameter Name="UserId" Type="Int32" />
     </DeleteParameters>
     <InsertParameters>
-        <asp:Parameter Name="name" Type="String" />
-        <asp:Parameter Name="password" Type="String" />
-        <asp:Parameter Name="email" Type="String" />
-        <asp:Parameter Name="score" Type="Int32" />
-        <asp:Parameter Name="achievements" Type="String" />
+        <asp:Parameter Name="UserId" Type="Int32" />
+        <asp:Parameter Name="ScoreId" Type="Int32" />
+        <asp:Parameter Name="AchievementId" Type="Int32" />
+        <asp:Parameter Name="Username" Type="String" />
+        <asp:Parameter Name="Password" Type="String" />
+        <asp:Parameter Name="Email" Type="String" />
+        <asp:Parameter Name="Level" Type="Int32" />
     </InsertParameters>
     <UpdateParameters>
-        <asp:Parameter Name="name" Type="String" />
-        <asp:Parameter Name="password" Type="String" />
-        <asp:Parameter Name="email" Type="String" />
-        <asp:Parameter Name="score" Type="Int32" />
-        <asp:Parameter Name="achievements" Type="String" />
-        <asp:Parameter Name="id" Type="Int32" />
+        <asp:Parameter Name="ScoreId" Type="Int32" />
+        <asp:Parameter Name="AchievementId" Type="Int32" />
+        <asp:Parameter Name="Username" Type="String" />
+        <asp:Parameter Name="Password" Type="String" />
+        <asp:Parameter Name="Email" Type="String" />
+        <asp:Parameter Name="Level" Type="Int32" />
+        <asp:Parameter Name="UserId" Type="Int32" />
     </UpdateParameters>
     </asp:SqlDataSource>
     <br />
