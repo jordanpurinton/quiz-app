@@ -3,7 +3,7 @@
 <asp:Content ID="BodyContent" ContentPlaceHolderID="MainContent" runat="server">
 
     <div ID="boardImage" runat="server" class="jumbotron" style="background-image:url(Images/banner-test.jpg); 
-            background-position:center; background-size:contain">
+            background-position:center center; background-size:auto; background-repeat:no-repeat ">
         <center>
             <div id="textArea" runat="server" style="max-width :50%;overflow-wrap :break-word">
                         <asp:Label ID="Label1" runat="server" Text="Label used for testing" Font-Size="X-Large" style="text-shadow:5px 5px 5px black"></asp:Label>

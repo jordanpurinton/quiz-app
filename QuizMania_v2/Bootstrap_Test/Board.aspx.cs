@@ -25,10 +25,14 @@ namespace Bootstrap_Test
             else
             {
                 boardImage.Style.Add("background-image", "url(Images/dock.jpg)");
-                Label1.Text = "zxmncbzmxncbzmxncbzmxncbzmxncbzmxncbzmxncbz";
+                // <br /> needs to be used for newlines in label text.  The label should automatically move 
+                // any overflow to the next line but in other cases this will need to be the format
+                Label1.Text = "zxmncbzmxncbzmxn" + "<br />" + "cbzmxncbzmxncbzmx" + "<br />" + "ncbzmxncbz";
                 Session["current"] = 0;
             }
 
         }
+
+
     }
 }
