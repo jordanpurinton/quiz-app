@@ -1,0 +1,54 @@
+﻿body {
+    color:lightgray;
+    font-family:Verdana, Geneva, Tahoma, sans-serif;
+    font-size:16px;
+    background-color:black;
+}
+#Wrapper {
+    width:80%;
+    height:auto;
+    margin:auto;
+    background-color:lightgray;
+    padding-bottom:20px;
+    -moz-border-radius:25px;
+    -webkit-border-radius:25px;
+    border-radius:25px;
+    overflow:hidden;
+}
+#Banner {
+
+
+}
+#NavBar{
+    height:45px;
+    background:linear-gradient(to top, black, grey);
+
+}
+#Nav{
+    display:block;
+    list-style:square;
+    text-align:left;
+}
+#Nav ul{
+    display:none;
+    list-style:none;
+}
+#Nav li{
+    color:lightgray;
+    text-shadow:2px 2px 2px black;
+    float:left;
+    display:block;
+    margin-top:15px;
+    padding:0px 20px 0px 20px;
+    border-left:1px solid lightgray;
+}
+#Nav a:link, #Nav a:visited, #Nav a:active{
+    display:block;
+    color: #ffffff;
+    text-shadow:2px 2px 2px black;
+    text-decoration:none;
+}
+#Nav a:hover{
+    background-color:white;
+}
+
