@@ -21,9 +21,39 @@
                 Click the bright green button below to start showing off how smart you really are... hopefully.
            </p>
           
-            <p>
-                <asp:Button ID="Button1" runat="server" Text="Click here to start the game!" Width="90%" 
+                <div>
+                <asp:DropDownList ID="DropDownList1" runat="server">
+                    <asp:ListItem Selected="True"># of Questions</asp:ListItem>
+                    <asp:ListItem>1</asp:ListItem>
+                    <asp:ListItem>2</asp:ListItem>
+                    <asp:ListItem>3</asp:ListItem>
+                    <asp:ListItem>4</asp:ListItem>
+                    <asp:ListItem>5</asp:ListItem>
+                    <asp:ListItem>6</asp:ListItem>
+                    <asp:ListItem>7</asp:ListItem>
+                    <asp:ListItem>8</asp:ListItem>
+                    <asp:ListItem>9</asp:ListItem>
+                    <asp:ListItem>10</asp:ListItem>
+                </asp:DropDownList>
+                    <br />
+                    <asp:DropDownList ID="DropDownList3" runat="server">
+                        <asp:ListItem Selected="True">Any</asp:ListItem>
+                        <asp:ListItem>Video Games</asp:ListItem>
+                        <asp:ListItem>Film</asp:ListItem>
+                        <asp:ListItem>TV</asp:ListItem>
+                        <asp:ListItem>History</asp:ListItem>
+                        <asp:ListItem>Sports</asp:ListItem>
+                        <asp:ListItem>General Knowledge</asp:ListItem>
+                        <asp:ListItem>Music</asp:ListItem>
+                    </asp:DropDownList>
+                </div>
+                            <p>
+
+                <asp:Button ID="Button1" runat="server" Text="Submit" Width="90%" 
                     style="background-color:greenyellow;border-radius:10px;text-shadow:5px 5px 5px black" OnClick="Button1_Click" Height="50px"/>
+
+                <asp:Button ID="Button2" runat="server" Text="Get Random Quiz" Width="90%" 
+                    style="background-color:greenyellow;border-radius:10px;text-shadow:5px 5px 5px black" OnClick="Button2_Click" Height="50px"/>
             </p>
             </center>
         </div>

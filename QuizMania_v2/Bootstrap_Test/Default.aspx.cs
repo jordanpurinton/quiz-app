@@ -24,5 +24,12 @@ namespace Bootstrap_Test
             Response.Redirect("Board.aspx");    
             
         }
+
+        protected void Button2_Click(object sender, EventArgs e)
+        {
+
+            Response.Redirect("Board.aspx");
+
+        }
     }
 }
