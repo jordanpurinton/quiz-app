@@ -252,6 +252,7 @@
     <Content Include="Global.asax" />
     <Content Include="Site.Master" />
     <Content Include="Temp.aspx" />
+    <Content Include="TestQuestions.aspx" />
     <Content Include="ViewSwitcher.ascx" />
     <Content Include="Web.config" />
     <Content Include="Bundle.config" />
@@ -432,6 +433,13 @@
     </Compile>
     <Compile Include="Temp.aspx.designer.cs">
       <DependentUpon>Temp.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="TestQuestions.aspx.cs">
+      <DependentUpon>TestQuestions.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="TestQuestions.aspx.designer.cs">
+      <DependentUpon>TestQuestions.aspx</DependentUpon>
     </Compile>
     <Compile Include="ViewSwitcher.ascx.cs">
       <DependentUpon>ViewSwitcher.ascx</DependentUpon>
