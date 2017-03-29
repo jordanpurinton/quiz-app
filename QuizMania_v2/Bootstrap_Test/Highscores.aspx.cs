@@ -18,8 +18,11 @@ namespace QuizMania
 
         private void ListScores()
         {
+            // Need to update stored procedures
+            /* 
             DataSelect mySelect = new DataSelect();
             DataSet scores = mySelect.SelectScores();
+            
 
             int i = 0;
             StringBuilder html = new StringBuilder();
@@ -35,6 +38,7 @@ namespace QuizMania
                 i += 1;
             }
             lblHighScores.Text = html.ToString();
+            */
         }
     }
 }

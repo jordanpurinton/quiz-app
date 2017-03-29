@@ -214,6 +214,7 @@
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
     <None Include="Scripts\jquery-1.10.2.intellisense.js" />
+    <Content Include="Highscores.aspx" />
     <Content Include="Images\banner-test.jpg" />
     <Content Include="Images\dock.jpg" />
     <Content Include="Images\George.jpg" />
@@ -388,6 +389,9 @@
     <Compile Include="Board.aspx.designer.cs">
       <DependentUpon>Board.aspx</DependentUpon>
     </Compile>
+    <Compile Include="App_Code\DataAccess.cs" />
+    <Compile Include="App_Code\DataInsert.cs" />
+    <Compile Include="App_Code\DataSelect.cs" />
     <Compile Include="Default.aspx.cs">
       <DependentUpon>Default.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
@@ -397,6 +401,13 @@
     </Compile>
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
+    </Compile>
+    <Compile Include="Highscores.aspx.cs">
+      <DependentUpon>Highscores.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Highscores.aspx.designer.cs">
+      <DependentUpon>Highscores.aspx</DependentUpon>
     </Compile>
     <Compile Include="Models\IdentityModels.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
