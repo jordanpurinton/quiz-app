@@ -1,6 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
-
+using System.Data;
 using System.Web;
 using System.Web.Providers.Entities;
 using System.Web.UI;
@@ -20,9 +20,16 @@ namespace Bootstrap_Test
 
         protected void Button1_Click(object sender, EventArgs e)
         {
+            int questionNum = int.Parse(QuestionNumberList.SelectedValue);
+            int[] questionArray = new int[questionNum];
+            DataSelect mySelect = new DataSelect();
+            DataSet questions = mySelect.SelectQuestions(questionNum, CategoryList.SelectedValue);
 
-            Response.Redirect("Board.aspx");    
-            
+            for (int i = 0; i < questionNum; i++)
+            {
+                Response.Write(questions.Tables[0].Rows[i].ToString() + "</br>");
+            }
+
         }
 
         protected void Button2_Click(object sender, EventArgs e)

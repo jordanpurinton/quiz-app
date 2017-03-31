@@ -232,6 +232,5 @@ C:\quiz-app\QuizMania_v2\Bootstrap_Test\bin\Microsoft.Owin.Security.Google.xml
 C:\quiz-app\QuizMania_v2\Bootstrap_Test\bin\Microsoft.Owin.Security.Twitter.xml
 C:\quiz-app\QuizMania_v2\Bootstrap_Test\bin\Microsoft.Owin.Security.MicrosoftAccount.xml
 C:\quiz-app\QuizMania_v2\Bootstrap_Test\bin\Microsoft.Owin.Security.OAuth.xml
-C:\quiz-app\QuizMania_v2\Bootstrap_Test\obj\Debug\QuizMania.csprojResolveAssemblyReference.cache
 C:\quiz-app\QuizMania_v2\Bootstrap_Test\obj\Debug\Bootstrap_Test.dll
 C:\quiz-app\QuizMania_v2\Bootstrap_Test\obj\Debug\Bootstrap_Test.pdb

@@ -199,7 +199,9 @@
     <Content Include="Account\TwoFactorAuthenticationSignIn.aspx" />
     <Content Include="Account\VerifyPhoneNumber.aspx" />
     <Content Include="App_Data\quiz-data_Data.mdf" />
-    <Content Include="App_Data\quiz-data_Log.ldf" />
+    <Content Include="App_Data\quiz-data_Data_log.ldf">
+      <DependentUpon>quiz-data_Data.mdf</DependentUpon>
+    </Content>
     <Content Include="Board.aspx" />
     <Content Include="Content\bootstrap-theme.css" />
     <Content Include="Content\bootstrap.css" />

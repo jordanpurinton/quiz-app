@@ -12,7 +12,7 @@ using System.Data.SqlClient;
 
     public class DataAccess
     {
-        string myConnectionString = ConfigurationManager.ConnectionStrings["DefaultConnection"].ToString();
+        string myConnectionString = ConfigurationManager.ConnectionStrings["JordanString"].ToString();
 
         public DataAccess() { }
 
