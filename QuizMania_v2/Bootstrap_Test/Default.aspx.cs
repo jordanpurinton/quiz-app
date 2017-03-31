@@ -21,13 +21,21 @@ namespace Bootstrap_Test
         protected void Button1_Click(object sender, EventArgs e)
         {
             int questionNum = int.Parse(QuestionNumberList.SelectedValue);
-            int[] questionArray = new int[questionNum];
+            string[] questionArray = new string[questionNum];
             DataSelect mySelect = new DataSelect();
             DataSet questions = mySelect.SelectQuestions(questionNum, CategoryList.SelectedValue);
 
             for (int i = 0; i < questionNum; i++)
             {
-                Response.Write(questions.Tables[0].Rows[i].ToString() + "</br>");
+                string questionString = questions.Tables[0].Rows[i][4].ToString().Trim();
+                string correctAnswer = questions.Tables[0].Rows[i][5].ToString().Trim(); ;
+                string incorrectAnswer1 = questions.Tables[0].Rows[i][6].ToString().Trim(); ;
+                string incorrectAnswer2 = questions.Tables[0].Rows[i][7].ToString().Trim(); ;
+                string incorrectAnswer3 = questions.Tables[0].Rows[i][8].ToString().Trim(); ;
+
+                questionArray[i] = questionString + "," + correctAnswer + "," + incorrectAnswer1 + "," + incorrectAnswer2 + "," + incorrectAnswer3;
+
+                Response.Write(questionArray[i] + "<br>");
             }
 
         }
