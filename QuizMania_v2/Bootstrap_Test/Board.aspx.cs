@@ -24,32 +24,24 @@ namespace Bootstrap_Test
                 string questionString = answerArray.ElementAt(0);
                 RemoveAt(ref answerArray, 0);
 
-                // randomize answers
-                Shuffle(answerArray);
-
-                questionLabel.Text = questionString;
-                Button1.Text = answerArray[0]; // there will always be at least two answers
-                Button2.Text = answerArray[1];
-
                 // check if the question is true/false
-                if (answerArray[2] != "")
-                {
-                    Button3.Text = answerArray[2];
-                    Button3.Visible = true;
-                }
-                else
+                if (answerArray[2] == "" && answerArray[3] == "")
                 {
                     Button3.Visible = false;
-                }
-
-                if (answerArray[3] != "")
-                {
-                    Button4.Text = answerArray[3];
-                    Button4.Visible = true;
+                    Button4.Visible = false;
+                    Button1.Text = answerArray[0];
+                    Button2.Text = answerArray[1];
                 }
                 else
                 {
-                    Button4.Visible = false;
+                    Shuffle(answerArray);
+                    questionLabel.Text = questionString;
+                    Button1.Text = answerArray[0]; // there will always be at least two answers
+                    Button2.Text = answerArray[1];
+                    Button3.Text = answerArray[2];
+                    Button4.Text = answerArray[3];
+                    Button3.Visible = true;
+                    Button4.Visible = true;
                 }
 
                 Session["QuestionNum"] = Convert.ToInt32(Session["QuestionNum"]) - 1;
@@ -67,7 +59,6 @@ namespace Bootstrap_Test
             if (Session["current"].ToString().Equals("0"))
             {
                 boardImage.Style.Add("background-image", "url(Images/George.jpg)");
-                Label1.Text = "lkasdjflskajdflkasjdflaksjdlfkasjdlf";
                 Session["current"] = 1;
             }
             else
@@ -75,7 +66,6 @@ namespace Bootstrap_Test
                 boardImage.Style.Add("background-image", "url(Images/dock.jpg)");
                 // <br /> needs to be used for newlines in label text.  The label should automatically move 
                 // any overflow to the next line but in other cases this will need to be the format
-                Label1.Text = "zxmncbzmxncbzmxn" + "<br />" + "cbzmxncbzmxncbzmx" + "<br />" + "ncbzmxncbz";
                 Session["current"] = 0;
             }
 

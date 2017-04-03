@@ -4,7 +4,7 @@
                 background-position:center center; background-repeat:no-repeat; background-size:auto ;height:auto">
         <center>
             <div id="textArea" runat="server" style="max-width:75%;overflow-wrap :break-word">
-        <asp:Label ID="Label1" runat="server" Text="Label used for testing" Font-Size="X-Large" style="text-shadow:5px 5px 5px black"></asp:Label>
+        <asp:Label ID="questionLabel" runat="server" Font-Size="X-Large" style="text-shadow:5px 5px 5px black"></asp:Label>
             </div>
         </center>    
     </div>
@@ -12,7 +12,6 @@
     <div class="row">
         <div class="col-md-12">
             <center>
-            <asp:Label runat="server" ID="questionLabel"></asp:Label>  
             <p><br />
                 <asp:Button ID="Button1" runat="server" Text="Button 1" Height="50px" Width="90%" 
                     style="background-color:greenyellow;border-radius:10px;text-shadow:1px 1px 1px green" OnClick="Button1_Click"/>
