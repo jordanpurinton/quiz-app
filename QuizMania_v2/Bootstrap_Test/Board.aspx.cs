@@ -13,6 +13,8 @@ namespace Bootstrap_Test
     {
         protected void Page_Load(object sender, EventArgs e)
         {
+
+            
             if ((int)Session["QuestionNum"] != 0)
             {
                 // get question index (contains question string and answers)
@@ -35,7 +37,6 @@ namespace Bootstrap_Test
                 else
                 {
                     Shuffle(answerArray);
-                    questionLabel.Text = questionString;
                     Button1.Text = answerArray[0]; // there will always be at least two answers
                     Button2.Text = answerArray[1];
                     Button3.Text = answerArray[2];
@@ -43,8 +44,9 @@ namespace Bootstrap_Test
                     Button3.Visible = true;
                     Button4.Visible = true;
                 }
+                questionLabel.Text = questionString;
 
-                Session["QuestionNum"] = Convert.ToInt32(Session["QuestionNum"]) - 1;
+                Session["QuestionNum"] = (int)Session["QuestionNum"] - 1;
             }
             else
             {

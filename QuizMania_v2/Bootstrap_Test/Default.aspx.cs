@@ -33,7 +33,7 @@ namespace Bootstrap_Test
             //Label1.Text = "Welcome to the Quiz Mania Experience. Gowieuroweiuroweiruwoei. ruwoeiruwoeriuwoeiruwoe. iruwoeiruoweiru";  
         }
 
-        protected void Button1_Click(object sender, EventArgs e)
+        protected void SubmitButton_Click(object sender, EventArgs e)
         {
             int questionNum = int.Parse(QuestionNumberList.SelectedValue);
             DataSelect mySelect = new DataSelect();
@@ -49,12 +49,18 @@ namespace Bootstrap_Test
                 string incorrectAnswer2 = questions.Tables[0].Rows[i][7].ToString().Trim();
                 string incorrectAnswer3 = questions.Tables[0].Rows[i][8].ToString().Trim();
 
+                /* debug
+                Response.Write("question: " + questionString + " | correct: " + correctAnswer +
+                                " | incorrect 1: " + incorrectAnswer1 + " | incorrect 2: " + incorrectAnswer2 +
+                                " | incorrect 3: " + incorrectAnswer3 + "<br />");
+                */
+
                 questionList.Add(questionString + "," + correctAnswer + "," + incorrectAnswer1 + "," + incorrectAnswer2 + "," + incorrectAnswer3);
             }
             Session["QuestionList"] = questionList;
             Session["Score"] = 0;
+
             Response.Redirect("Board.aspx");
-            
         }
 
         protected void Button2_Click(object sender, EventArgs e)
