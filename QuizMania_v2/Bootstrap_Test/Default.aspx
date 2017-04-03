@@ -19,7 +19,7 @@
             <h2>Welcome to the quiz game.  We hope you enjoy your new favorite addiction</h2>
             <p>
                 Click the bright green button below to start showing off how smart you really are... hopefully.
-           </p>
+           </p><br />
           
                 <div>
                 <asp:DropDownList ID="QuestionNumberList" runat="server">
@@ -36,13 +36,13 @@
                 </asp:DropDownList>
                     <br />
                     <asp:DropDownList ID="CategoryList" runat="server">
-                        <asp:ListItem>Entertainment: Video Games</asp:ListItem>
-                        <asp:ListItem>Entertainment: Film</asp:ListItem>
-                        <asp:ListItem>Entertainment: TV</asp:ListItem>
                         <asp:ListItem>History</asp:ListItem>
                         <asp:ListItem>Sports</asp:ListItem>
                         <asp:ListItem>General Knowledge</asp:ListItem>
                         <asp:ListItem>Entertainment: Music</asp:ListItem>
+                        <asp:ListItem>Entertainment: Video Games</asp:ListItem>
+                        <asp:ListItem>Entertainment: Film</asp:ListItem>
+                        <asp:ListItem>Entertainment: Television</asp:ListItem>
                     </asp:DropDownList>
                 </div>
                             <p>

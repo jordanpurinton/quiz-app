@@ -36,7 +36,6 @@ namespace Bootstrap_Test
         protected void Button1_Click(object sender, EventArgs e)
         {
             int questionNum = int.Parse(QuestionNumberList.SelectedValue);
-            ArrayList questionArray = new ArrayList();
             DataSelect mySelect = new DataSelect();
             DataSet questions = mySelect.SelectQuestions(questionNum, CategoryList.SelectedValue);
             ArrayList questionList = new ArrayList(questionNum);
@@ -50,10 +49,10 @@ namespace Bootstrap_Test
                 string incorrectAnswer2 = questions.Tables[0].Rows[i][7].ToString().Trim(); ;
                 string incorrectAnswer3 = questions.Tables[0].Rows[i][8].ToString().Trim(); ;
 
-                questionArray.Add(questionString + "," + correctAnswer + "," + incorrectAnswer1 + "," + incorrectAnswer2 + "," + incorrectAnswer3);
+                questionList.Add(questionString + "," + correctAnswer + "," + incorrectAnswer1 + "," + incorrectAnswer2 + "," + incorrectAnswer3);
             }
-            Session["QuestionList"] = questionArray;
-            questionList = (ArrayList)Session["QuestionList"];
+            Session["QuestionList"] = questionList;
+            Session["Score"] = 0;
             Response.Redirect("Board.aspx");
             
         }

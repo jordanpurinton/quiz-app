@@ -8,7 +8,7 @@
                         <asp:Label ID="Label1" runat="server" Text="Label used for testing" Font-Size="X-Large" style="text-shadow:5px 5px 5px black"></asp:Label>
             </div>            
         </center>    
-    </div>
+    </div><br />
     <div id="ButtonBox" runat="server">
         <asp:Button ID="Button1" runat="server" Text="Login Here!" Width="90%" 
                         style="background-color:greenyellow;border-radius:10px;text-shadow:2px 2px 2px green" OnClick="Button1_Click" Height="50px"/>
