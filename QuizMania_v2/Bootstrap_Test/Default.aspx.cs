@@ -15,8 +15,22 @@ namespace Bootstrap_Test
          
         protected void Page_Load(object sender, EventArgs e)
         {
-            Session["current"] = 0;
-            Label1.Text = "Welcome to the Quiz Mania Experience. Gowieuroweiuroweiruwoei. ruwoeiruwoeriuwoeiruwoe. iruwoeiruoweiru";  
+            
+            // Comment out the "if" and "else" statements to run without authentication
+
+            if (!Page.User.Identity.IsAuthenticated)
+            {
+                Response.Redirect("Account/Login.aspx");
+            }
+
+            else
+            {
+                Session["current"] = 0;
+                Label1.Text = "Welcome to the Quiz Mania Experience. Gowieuroweiuroweiruwoei. ruwoeiruwoeriuwoeiruwoe. iruwoeiruoweiru";
+            }
+            // Uncomment the next two lines to run without authentication
+            //Session["current"] = 0;
+            //Label1.Text = "Welcome to the Quiz Mania Experience. Gowieuroweiuroweiruwoei. ruwoeiruwoeriuwoeiruwoe. iruwoeiruoweiru";  
         }
 
         protected void Button1_Click(object sender, EventArgs e)
