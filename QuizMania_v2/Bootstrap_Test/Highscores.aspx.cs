@@ -13,7 +13,15 @@ namespace QuizMania
     {
         protected void Page_Load(object sender, EventArgs e)
         {
+            // Comment out the "if" statement to run without authentication
+
+            if (!Page.User.Identity.IsAuthenticated)
+            {
+                Response.Redirect("Account/Login.aspx");
+            }
+
             ListScores();
+
         }
 
         private void ListScores()

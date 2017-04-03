@@ -38,7 +38,10 @@ namespace Bootstrap_Test.Account
                 switch (result)
                 {
                     case SignInStatus.Success:
+                        Session.Add("Authenticated", "1");
                         IdentityHelper.RedirectToReturnUrl(Request.QueryString["ReturnUrl"], Response);
+                        //Session.Add("Authenticated", "1");
+                        //Response.Redirect("Default.aspx");
                         break;
                     case SignInStatus.LockedOut:
                         Response.Redirect("/Account/Lockout");

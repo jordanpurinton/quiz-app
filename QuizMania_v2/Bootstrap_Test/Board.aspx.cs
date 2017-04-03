@@ -11,7 +11,12 @@ namespace Bootstrap_Test
     {
         protected void Page_Load(object sender, EventArgs e)
         {
+            // Comment out the "if" statement to run without authentication
 
+            if (!Page.User.Identity.IsAuthenticated)
+            {
+                Response.Redirect("Account/Login.aspx");
+            }
         }
         protected void Button1_Click(object sender, EventArgs e)
         {
