@@ -48,10 +48,10 @@
                             <p>
 
                 <asp:Button ID="Button1" runat="server" Text="Submit" Width="90%" 
-                    style="background-color:greenyellow;border-radius:10px;text-shadow:5px 5px 5px black" OnClick="Button1_Click" Height="50px"/>
+                    style="background-color:greenyellow;border-radius:10px;text-shadow:1px 1px 1px green" OnClick="Button1_Click" Height="50px"/>
 
                 <asp:Button ID="Button2" runat="server" Text="Get Random Quiz" Width="90%" 
-                    style="background-color:greenyellow;border-radius:10px;text-shadow:5px 5px 5px black" OnClick="Button2_Click" Height="50px"/>
+                    style="background-color:greenyellow;border-radius:10px;text-shadow:1px 1px 1px green" OnClick="Button2_Click" Height="50px"/>
             </p>
             </center>
         </div>
