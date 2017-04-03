@@ -36,7 +36,10 @@ namespace Bootstrap_Test
                 }
                 else
                 {
-                    Shuffle(answerArray);
+                    answerArray = Shuffle(answerArray);
+                    /* DEBUG
+                    Response.Write("Correct answer: " + (int)Session["correctAnswer"]);
+                    */
                     Button1.Text = answerArray[0]; // there will always be at least two answers
                     Button2.Text = answerArray[1];
                     Button3.Text = answerArray[2];
@@ -72,19 +75,29 @@ namespace Bootstrap_Test
             }
 
         }
-        static void Shuffle<T>(T[] array)
+        private string[] Shuffle(string[] array)
         {
             Random _random = new Random();
             int n = array.Length;
+            
             for (int i = 0; i < n; i++)
             {
                 // NextDouble returns a random number between 0 and 1.
                 // ... It is equivalent to Math.random() in Java.
                 int r = i + (int)(_random.NextDouble() * (n - i));
-                T t = array[r];
+
+                // for the first index, the correct answer is the randomized number
+                if (i == 0)
+                {
+                    Session["correctAnswer"] = r;
+                }
+
+                string t = array[r];
                 array[r] = array[i];
                 array[i] = t;
             }
+
+            return array;
 
         }
 
