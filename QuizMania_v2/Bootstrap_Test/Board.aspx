@@ -12,7 +12,7 @@
     <div class="row">
         <div class="col-md-12">
             <center>
-            <h2>Select your answer below</h2>            
+            <asp:Label runat="server" ID="questionString"></asp:Label>  
             <p>
                 <asp:Button ID="Button1" runat="server" Text="Button 1" Height="50px" Width="90%" 
                     style="background-color:greenyellow;border-radius:10px;text-shadow:5px 5px 5px black" OnClick="Button1_Click"/>

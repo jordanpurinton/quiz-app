@@ -23,7 +23,6 @@
           
                 <div>
                 <asp:DropDownList ID="QuestionNumberList" runat="server">
-                    <asp:ListItem Selected="True"># of Questions</asp:ListItem>
                     <asp:ListItem>1</asp:ListItem>
                     <asp:ListItem>2</asp:ListItem>
                     <asp:ListItem>3</asp:ListItem>
@@ -37,14 +36,13 @@
                 </asp:DropDownList>
                     <br />
                     <asp:DropDownList ID="CategoryList" runat="server">
-                        <asp:ListItem Selected="True">Any</asp:ListItem>
-                        <asp:ListItem>Video Games</asp:ListItem>
-                        <asp:ListItem>Film</asp:ListItem>
-                        <asp:ListItem>TV</asp:ListItem>
+                        <asp:ListItem>Entertainment: Video Games</asp:ListItem>
+                        <asp:ListItem>Entertainment: Film</asp:ListItem>
+                        <asp:ListItem>Entertainment: TV</asp:ListItem>
                         <asp:ListItem>History</asp:ListItem>
                         <asp:ListItem>Sports</asp:ListItem>
                         <asp:ListItem>General Knowledge</asp:ListItem>
-                        <asp:ListItem>Music</asp:ListItem>
+                        <asp:ListItem>Entertainment: Music</asp:ListItem>
                     </asp:DropDownList>
                 </div>
                             <p>
