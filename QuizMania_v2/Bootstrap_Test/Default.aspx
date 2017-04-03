@@ -22,7 +22,7 @@
            </p><br />
           
                 <div>
-                <asp:DropDownList ID="QuestionNumberList" runat="server">
+                <asp:DropDownList ID="QuestionNumberList" runat="server" ForeColor="Black">
                     <asp:ListItem>1</asp:ListItem>
                     <asp:ListItem>2</asp:ListItem>
                     <asp:ListItem>3</asp:ListItem>
@@ -35,7 +35,7 @@
                     <asp:ListItem>10</asp:ListItem>
                 </asp:DropDownList>
                     <br />
-                    <asp:DropDownList ID="CategoryList" runat="server">
+                    <asp:DropDownList ID="CategoryList" runat="server" ForeColor="Black">
                         <asp:ListItem>History</asp:ListItem>
                         <asp:ListItem>Sports</asp:ListItem>
                         <asp:ListItem>General Knowledge</asp:ListItem>
