@@ -12,18 +12,16 @@ public class DataSelect
 
     }
 
-    /*
-    public DataSet SelectScores(int selectId)
+    
+    public DataSet SelectHighScores()
     {
         DataAccess myAccess = new DataAccess();
-        SqlParameter[] parameters = new SqlParameter[1];
-        parameters[0] = new SqlParameter("ItemId", ItemId);
 
-        string query = "spReturnItems";
-        DataSet rows = myAccess.getQuery(query, parameters);
+        string query = "spSelectScores";
+        DataSet rows = myAccess.getQuery(query);
         return rows;
     }
-    */
+    
 
     public DataSet SelectOrders()
     {
