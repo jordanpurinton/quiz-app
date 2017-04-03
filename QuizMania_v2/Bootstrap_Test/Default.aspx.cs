@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Collections;
 using System.Collections.Generic;
 using System.Data;
 using System.Web;
@@ -21,9 +22,11 @@ namespace Bootstrap_Test
         protected void Button1_Click(object sender, EventArgs e)
         {
             int questionNum = int.Parse(QuestionNumberList.SelectedValue);
-            string[] questionArray = new string[questionNum];
+            ArrayList questionArray = new ArrayList();
             DataSelect mySelect = new DataSelect();
             DataSet questions = mySelect.SelectQuestions(questionNum, CategoryList.SelectedValue);
+            ArrayList questionList = new ArrayList(questionNum);
+            Session["QuestionNum"] = questionNum;
 
             for (int i = 0; i < questionNum; i++)
             {
@@ -33,11 +36,12 @@ namespace Bootstrap_Test
                 string incorrectAnswer2 = questions.Tables[0].Rows[i][7].ToString().Trim(); ;
                 string incorrectAnswer3 = questions.Tables[0].Rows[i][8].ToString().Trim(); ;
 
-                questionArray[i] = questionString + "," + correctAnswer + "," + incorrectAnswer1 + "," + incorrectAnswer2 + "," + incorrectAnswer3;
-
-                Response.Write(questionArray[i] + "<br>");
+                questionArray.Add(questionString + "," + correctAnswer + "," + incorrectAnswer1 + "," + incorrectAnswer2 + "," + incorrectAnswer3);
             }
-
+            Session["QuestionList"] = questionArray;
+            questionList = (ArrayList)Session["QuestionList"];
+            Response.Redirect("Board.aspx");
+            
         }
 
         protected void Button2_Click(object sender, EventArgs e)
