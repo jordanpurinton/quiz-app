@@ -44,10 +44,10 @@ namespace Bootstrap_Test
             for (int i = 0; i < questionNum; i++)
             {
                 string questionString = questions.Tables[0].Rows[i][4].ToString().Trim();
-                string correctAnswer = questions.Tables[0].Rows[i][5].ToString().Trim(); ;
-                string incorrectAnswer1 = questions.Tables[0].Rows[i][6].ToString().Trim(); ;
-                string incorrectAnswer2 = questions.Tables[0].Rows[i][7].ToString().Trim(); ;
-                string incorrectAnswer3 = questions.Tables[0].Rows[i][8].ToString().Trim(); ;
+                string correctAnswer = questions.Tables[0].Rows[i][5].ToString().Trim();
+                string incorrectAnswer1 = questions.Tables[0].Rows[i][6].ToString().Trim();
+                string incorrectAnswer2 = questions.Tables[0].Rows[i][7].ToString().Trim();
+                string incorrectAnswer3 = questions.Tables[0].Rows[i][8].ToString().Trim();
 
                 questionList.Add(questionString + "," + correctAnswer + "," + incorrectAnswer1 + "," + incorrectAnswer2 + "," + incorrectAnswer3);
             }

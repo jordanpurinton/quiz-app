@@ -15,10 +15,11 @@ namespace QuizMania
         {
             // Comment out the "if" statement to run without authentication
 
+            /*
             if (!Page.User.Identity.IsAuthenticated)
             {
                 Response.Redirect("Account/Login.aspx");
-            }
+            }*/
 
             ListScores();
 
@@ -27,9 +28,9 @@ namespace QuizMania
         private void ListScores()
         {
             // Need to update stored procedures
-            /* 
+            
             DataSelect mySelect = new DataSelect();
-            DataSet scores = mySelect.SelectScores();
+            DataSet scores = mySelect.SelectHighScores();
             
 
             int i = 0;
@@ -37,16 +38,16 @@ namespace QuizMania
             foreach (var row in scores.Tables[0].Rows)
             {
                 html.Append(String.Format(@"
-                <div style='color: #000000; text-align: center;'>
+                <div style='background: #FFF; color: #000000; text-align: center;'>
                     <p style='margin: 10px; padding:10px; border-style: solid; border-width: 1px;'>
-                    Place |{3}|&nbsp;&nbsp;&nbsp;UserId |{0}|&nbsp;&nbsp;&nbsp;Score |{1}|&nbsp;&nbsp;&nbsp;Date Scored |{2}|<p>
+                    Place {3}&nbsp;&nbsp;|&nbsp;&nbsp;UserId {0}&nbsp;&nbsp;|&nbsp;&nbsp;Score {1}&nbsp;&nbsp;|&nbsp;&nbsp;Date Scored {2}<p>
                 </div>                
                 ", scores.Tables[0].Rows[i][1].ToString(), scores.Tables[0].Rows[i][2].ToString(),
                     scores.Tables[0].Rows[i][3].ToString(), i+1));
                 i += 1;
             }
             lblHighScores.Text = html.ToString();
-            */
+            
         }
     }
 }
