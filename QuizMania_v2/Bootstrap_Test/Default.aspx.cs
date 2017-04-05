@@ -55,7 +55,7 @@ namespace Bootstrap_Test
                                 " | incorrect 3: " + incorrectAnswer3 + "<br />");
                 */
 
-                questionList.Add(questionString + "," + correctAnswer + "," + incorrectAnswer1 + "," + incorrectAnswer2 + "," + incorrectAnswer3);
+                questionList.Add(questionString + "|" + correctAnswer + "|" + incorrectAnswer1 + "|" + incorrectAnswer2 + "|" + incorrectAnswer3);
             }
             Session["QuestionList"] = questionList;
             Session["Score"] = 0;

@@ -11,16 +11,17 @@ namespace Bootstrap_Test
 {
     public partial class Board : System.Web.UI.Page
     {
+        string correctAnswer;
+
         protected void Page_Load(object sender, EventArgs e)
         {
-
             
             if ((int)Session["QuestionNum"] != 0)
             {
                 // get question index (contains question string and answers)
                 ArrayList questionList = (ArrayList)Session["QuestionList"]; 
                 string questionIndex = (string)questionList[(int)Session["QuestionNum"] - 1];
-                string[] answerArray = questionIndex.Split(',');
+                string[] answerArray = questionIndex.Split('|');
 
                 // store and then remove question string from array
                 string questionString = answerArray.ElementAt(0);
@@ -33,17 +34,25 @@ namespace Bootstrap_Test
                     Button4.Visible = false;
                     Button1.Text = answerArray[0];
                     Button2.Text = answerArray[1];
+                    Button1.CommandName = answerArray[0];
+                    Button2.CommandName = answerArray[1];
                 }
                 else
                 {
                     answerArray = Shuffle(answerArray);
+                    correctAnswer = answerArray[(int)Session["correctAnswer"]];
                     /* DEBUG
                     Response.Write("Correct answer: " + (int)Session["correctAnswer"]);
                     */
+
                     Button1.Text = answerArray[0]; // there will always be at least two answers
                     Button2.Text = answerArray[1];
                     Button3.Text = answerArray[2];
                     Button4.Text = answerArray[3];
+                    Button1.CommandName = answerArray[0];
+                    Button2.CommandName = answerArray[1];
+                    Button3.CommandName = answerArray[2];
+                    Button4.CommandName = answerArray[3];
                     Button3.Visible = true;
                     Button4.Visible = true;
                 }
@@ -60,6 +69,77 @@ namespace Bootstrap_Test
         }
         protected void Button1_Click(object sender, EventArgs e)
         {
+            if (Button1.CommandName == correctAnswer)
+            {
+                Response.Write("<script>alert(" + correctAnswer + ");</script>");
+            }
+
+
+            if (Session["current"].ToString().Equals("0"))
+            {
+                boardImage.Style.Add("background-image", "url(Images/George.jpg)");
+                Session["current"] = 1;
+            }
+            else
+            {
+                boardImage.Style.Add("background-image", "url(Images/dock.jpg)");
+                // <br /> needs to be used for newlines in label text.  The label should automatically move 
+                // any overflow to the next line but in other cases this will need to be the format
+                Session["current"] = 0;
+            }
+
+        }
+
+        protected void Button2_Click(object sender, EventArgs e)
+        {
+            if (Button2.CommandName == correctAnswer)
+            {
+                Response.Write("<script>alert(" + correctAnswer + ");</script>");
+            }
+
+            if (Session["current"].ToString().Equals("0"))
+            {
+                boardImage.Style.Add("background-image", "url(Images/George.jpg)");
+                Session["current"] = 1;
+            }
+            else
+            {
+                boardImage.Style.Add("background-image", "url(Images/dock.jpg)");
+                // <br /> needs to be used for newlines in label text.  The label should automatically move 
+                // any overflow to the next line but in other cases this will need to be the format
+                Session["current"] = 0;
+            }
+
+        }
+
+        protected void Button3_Click(object sender, EventArgs e)
+        {
+            if (Button3.CommandName == correctAnswer)
+            {
+                Response.Write("<script>alert(" + correctAnswer + ");</script>");
+            }
+
+            if (Session["current"].ToString().Equals("0"))
+            {
+                boardImage.Style.Add("background-image", "url(Images/George.jpg)");
+                Session["current"] = 1;
+            }
+            else
+            {
+                boardImage.Style.Add("background-image", "url(Images/dock.jpg)");
+                // <br /> needs to be used for newlines in label text.  The label should automatically move 
+                // any overflow to the next line but in other cases this will need to be the format
+                Session["current"] = 0;
+            }
+
+        }
+
+        protected void Button4_Click(object sender, EventArgs e)
+        {
+            if (Button4.CommandName == correctAnswer)
+            {
+                Response.Write("<script>alert(" + correctAnswer + ");</script>");
+            }
 
             if (Session["current"].ToString().Equals("0"))
             {
