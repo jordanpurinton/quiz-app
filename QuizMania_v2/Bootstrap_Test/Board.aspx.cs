@@ -32,8 +32,8 @@ namespace Bootstrap_Test
                 {
                     Button3.Visible = false;
                     Button4.Visible = false;
-                    Button1.Text = answerArray[0];
-                    Button2.Text = answerArray[1];
+                    Button1.Text = System.Net.WebUtility.HtmlDecode(answerArray[0]);
+                    Button2.Text = System.Net.WebUtility.HtmlDecode(answerArray[1]);
                     Button1.CommandName = answerArray[0];
                     Button2.CommandName = answerArray[1];
                 }
@@ -44,15 +44,14 @@ namespace Bootstrap_Test
                     /* DEBUG
                     Response.Write("Correct answer: " + (int)Session["correctAnswer"]);
                     */
-
-                    Button1.Text = answerArray[0]; // there will always be at least two answers
-                    Button2.Text = answerArray[1];
-                    Button3.Text = answerArray[2];
-                    Button4.Text = answerArray[3];
-                    Button1.CommandName = answerArray[0];
-                    Button2.CommandName = answerArray[1];
-                    Button3.CommandName = answerArray[2];
-                    Button4.CommandName = answerArray[3];
+                    Button1.Text = System.Net.WebUtility.HtmlDecode(answerArray[0]);
+                    Button2.Text = System.Net.WebUtility.HtmlDecode(answerArray[1]);
+                    Button3.Text = System.Net.WebUtility.HtmlDecode(answerArray[2]);
+                    Button4.Text = System.Net.WebUtility.HtmlDecode(answerArray[3]);
+                    Button1.CommandName = System.Net.WebUtility.HtmlDecode(answerArray[0]);
+                    Button2.CommandName = System.Net.WebUtility.HtmlDecode(answerArray[1]);
+                    Button3.CommandName = System.Net.WebUtility.HtmlDecode(answerArray[2]);
+                    Button4.CommandName = System.Net.WebUtility.HtmlDecode(answerArray[3]);
                     Button3.Visible = true;
                     Button4.Visible = true;
                 }
