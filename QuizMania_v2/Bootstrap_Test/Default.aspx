@@ -43,6 +43,7 @@
                         <asp:ListItem>Video Games</asp:ListItem>
                         <asp:ListItem>Film</asp:ListItem>
                         <asp:ListItem>Television</asp:ListItem>
+                        <asp:ListItem>Random</asp:ListItem>
                     </asp:DropDownList>
                 </div>
                             <p>

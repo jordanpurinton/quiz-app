@@ -36,12 +36,22 @@ public class DataSelect
     {
         DataAccess myAccess = new DataAccess();
 
-        SqlParameter[] parameters = new SqlParameter[2];
-        parameters[0] = new SqlParameter("number", number);
-        parameters[1] = new SqlParameter("category", category);
-
-        string query = "spSelectQuestions";
-        DataSet rows = myAccess.getQuery(query, parameters);
-        return rows;
+        if (category != "Random")
+        {
+            SqlParameter[] parameters = new SqlParameter[2];
+            parameters[0] = new SqlParameter("number", number);
+            parameters[1] = new SqlParameter("category", category);
+            string query = "spSelectQuestions";
+            DataSet rows = myAccess.getQuery(query, parameters);
+            return rows;
+        }
+        else
+        {
+            SqlParameter[] parameters = new SqlParameter[1];
+            parameters[0] = new SqlParameter("number", number);
+            string query = "spRandomCategory";
+            DataSet rows = myAccess.getQuery(query, parameters);
+            return rows;
+        }
     }
 }
