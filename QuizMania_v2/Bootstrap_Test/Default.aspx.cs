@@ -35,6 +35,8 @@ namespace Bootstrap_Test
 
         protected void SubmitButton_Click(object sender, EventArgs e)
         {
+            Session["score"] = 0;
+
             int questionNum = int.Parse(QuestionNumberList.SelectedValue);
             DataSelect mySelect = new DataSelect();
             DataSet questions = mySelect.SelectQuestions(questionNum, CategoryList.SelectedValue);

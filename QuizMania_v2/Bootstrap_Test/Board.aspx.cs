@@ -11,13 +11,11 @@ namespace Bootstrap_Test
 {
     public partial class Board : System.Web.UI.Page
     {
-        string correctAnswer;
-
         protected void Page_Load(object sender, EventArgs e)
-        {
-            
+        {    
             if ((int)Session["QuestionNum"] != 0)
-            {
+            { 
+
                 // get question index (contains question string and answers)
                 ArrayList questionList = (ArrayList)Session["QuestionList"]; 
                 string questionIndex = (string)questionList[(int)Session["QuestionNum"] - 1];
@@ -27,31 +25,51 @@ namespace Bootstrap_Test
                 string questionString = answerArray.ElementAt(0);
                 RemoveAt(ref answerArray, 0);
 
+                Session["correctString"] = answerArray[0];
+                Response.Write(Session["correctString"] + "</br>");
+
                 // check if the question is true/false
                 if (answerArray[2] == "" && answerArray[3] == "")
                 {
                     Button3.Visible = false;
                     Button4.Visible = false;
-                    Button1.Text = System.Net.WebUtility.HtmlDecode(answerArray[0]);
-                    Button2.Text = System.Net.WebUtility.HtmlDecode(answerArray[1]);
-                    Button1.CommandName = answerArray[0];
-                    Button2.CommandName = answerArray[1];
+                    for (int i = 0; i < 2; i++)
+                    {
+                        // randomize the true false questions
+                        Random random = new Random();
+                        int ran = (int)random.NextDouble();
+                        if (ran == 0)
+                        {
+                            Button1.Text = System.Net.WebUtility.HtmlDecode(answerArray[0]);
+                            Button2.Text = System.Net.WebUtility.HtmlDecode(answerArray[1]);
+                            Session["correctAnswer"] = "0";
+                        }
+                        else
+                        {
+                            Button1.Text = System.Net.WebUtility.HtmlDecode(answerArray[1]);
+                            Button2.Text = System.Net.WebUtility.HtmlDecode(answerArray[0]);
+                            Session["correctAnswer"] = "1";
+                        }
+                    }
+
                 }
                 else
                 {
                     answerArray = Shuffle(answerArray);
-                    correctAnswer = answerArray[(int)Session["correctAnswer"]];
-                    /* DEBUG
-                    Response.Write("Correct answer: " + (int)Session["correctAnswer"]);
-                    */
+
+                    // check and store correct index
+                    for (int i = 0; i < 4; i++)
+                    {
+                        if (answerArray[i] == (string)Session["correctString"])
+                        {
+                            Session["correctAnswer"] = i.ToString();
+                            Response.Write(i.ToString() + "</br>");
+                        }
+                    }
                     Button1.Text = System.Net.WebUtility.HtmlDecode(answerArray[0]);
                     Button2.Text = System.Net.WebUtility.HtmlDecode(answerArray[1]);
                     Button3.Text = System.Net.WebUtility.HtmlDecode(answerArray[2]);
                     Button4.Text = System.Net.WebUtility.HtmlDecode(answerArray[3]);
-                    Button1.CommandName = System.Net.WebUtility.HtmlDecode(answerArray[0]);
-                    Button2.CommandName = System.Net.WebUtility.HtmlDecode(answerArray[1]);
-                    Button3.CommandName = System.Net.WebUtility.HtmlDecode(answerArray[2]);
-                    Button4.CommandName = System.Net.WebUtility.HtmlDecode(answerArray[3]);
                     Button3.Visible = true;
                     Button4.Visible = true;
                 }
@@ -66,11 +84,12 @@ namespace Bootstrap_Test
 
 
         }
-        protected void Button1_Click(object sender, EventArgs e)
+        protected void Button1_Click(object sender, CommandEventArgs e)
         {
-            if (Button1.CommandName == correctAnswer)
+            string buttonPressed = e.CommandArgument.ToString();
+            if (buttonPressed == (string)Session["correctAnswer"])
             {
-                Response.Write("<script>alert(" + correctAnswer + ");</script>");
+                Response.Write("Correct</br>");
             }
 
 
@@ -91,10 +110,6 @@ namespace Bootstrap_Test
 
         protected void Button2_Click(object sender, EventArgs e)
         {
-            if (Button2.CommandName == correctAnswer)
-            {
-                Response.Write("<script>alert(" + correctAnswer + ");</script>");
-            }
 
             if (Session["current"].ToString().Equals("0"))
             {
@@ -113,10 +128,6 @@ namespace Bootstrap_Test
 
         protected void Button3_Click(object sender, EventArgs e)
         {
-            if (Button3.CommandName == correctAnswer)
-            {
-                Response.Write("<script>alert(" + correctAnswer + ");</script>");
-            }
 
             if (Session["current"].ToString().Equals("0"))
             {
@@ -135,10 +146,6 @@ namespace Bootstrap_Test
 
         protected void Button4_Click(object sender, EventArgs e)
         {
-            if (Button4.CommandName == correctAnswer)
-            {
-                Response.Write("<script>alert(" + correctAnswer + ");</script>");
-            }
 
             if (Session["current"].ToString().Equals("0"))
             {
@@ -164,12 +171,6 @@ namespace Bootstrap_Test
                 // NextDouble returns a random number between 0 and 1.
                 // ... It is equivalent to Math.random() in Java.
                 int r = i + (int)(_random.NextDouble() * (n - i));
-
-                // for the first index, the correct answer is the randomized number
-                if (i == 0)
-                {
-                    Session["correctAnswer"] = r;
-                }
 
                 string t = array[r];
                 array[r] = array[i];
