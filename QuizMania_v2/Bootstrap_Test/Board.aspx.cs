@@ -12,7 +12,37 @@ namespace Bootstrap_Test
     public partial class Board : System.Web.UI.Page
     {
         protected void Page_Load(object sender, EventArgs e)
-        {    
+        {
+            if (!Page.IsPostBack)
+            {
+                GameLoad();
+            }
+        }
+        protected void Button1_Click(object sender, CommandEventArgs e)
+        {
+            string buttonPressed = e.CommandArgument.ToString();
+            if (buttonPressed == (string)Session["correctAnswer"])
+            {
+                Response.Write("Correct</br>");
+            }
+
+
+            if (Session["current"].ToString().Equals("0"))
+            {
+                Session["current"] = 1;
+            }
+            else
+            {
+                // <br /> needs to be used for newlines in label text.  The label should automatically move 
+                // any overflow to the next line but in other cases this will need to be the format
+                Session["current"] = 0;
+            }
+
+            GameLoad();
+        }
+
+        protected void GameLoad()
+        {
             if ((int)Session["QuestionNum"] != 0)
             {
                 Random random = new Random();
@@ -31,13 +61,13 @@ namespace Bootstrap_Test
 
                 if ((string)Session["Category"] == "Sports")
                 {
-                    if(ran == 0)
+                    if (ran == 0)
                         boardImage.Style.Add("background-image", "url(Images/category_images/sports1.jpg)");
                     else
                         boardImage.Style.Add("background-image", "url(Images/category_images/sports2.png)");
 
                 }
-                else if((string)Session["Category"] == "General Knowledge")
+                else if ((string)Session["Category"] == "General Knowledge")
                 {
                     if (ran == 0)
                         boardImage.Style.Add("background-image", "url(Images/category_images/general1.jpg)");
@@ -139,95 +169,8 @@ namespace Bootstrap_Test
             {
                 Response.Redirect("About.aspx");
             }
-
-
-        }
-        protected void Button1_Click(object sender, CommandEventArgs e)
-        {
-            string buttonPressed = e.CommandArgument.ToString();
-            if (buttonPressed == (string)Session["correctAnswer"])
-            {
-                Response.Write("Correct</br>");
-            }
-
-
-            if (Session["current"].ToString().Equals("0"))
-            {
-                Session["current"] = 1;
-            }
-            else
-            {
-                // <br /> needs to be used for newlines in label text.  The label should automatically move 
-                // any overflow to the next line but in other cases this will need to be the format
-                Session["current"] = 0;
-            }
-
         }
 
-        protected void Button2_Click(object sender, CommandEventArgs e)
-        {
-
-            string buttonPressed = e.CommandArgument.ToString();
-            if (buttonPressed == (string)Session["correctAnswer"])
-            {
-                Response.Write("Correct</br>");
-            }
-
-            if (Session["current"].ToString().Equals("0"))
-            {
-                Session["current"] = 1;
-            }
-            else
-            {
-                boardImage.Style.Add("background-image", "url(Images/dock.jpg)");
-                // <br /> needs to be used for newlines in label text.  The label should automatically move 
-                // any overflow to the next line but in other cases this will need to be the format
-                Session["current"] = 0;
-            }
-
-        }
-
-        protected void Button3_Click(object sender, CommandEventArgs e)
-        {
-            string buttonPressed = e.CommandArgument.ToString();
-            if (buttonPressed == (string)Session["correctAnswer"])
-            {
-                Response.Write("Correct</br>");
-            }
-
-            if (Session["current"].ToString().Equals("0"))
-            {
-                Session["current"] = 1;
-            }
-            else
-            {
-                // <br /> needs to be used for newlines in label text.  The label should automatically move 
-                // any overflow to the next line but in other cases this will need to be the format
-                Session["current"] = 0;
-            }
-
-        }
-
-        protected void Button4_Click(object sender, CommandEventArgs e)
-        {
-            string buttonPressed = e.CommandArgument.ToString();
-            if (buttonPressed == (string)Session["correctAnswer"])
-            {
-                Response.Write("Correct</br>");
-            }
-
-            if (Session["current"].ToString().Equals("0"))
-            {
-                Session["current"] = 1;
-            }
-            else
-            {
-                // <br /> needs to be used for newlines in label text.  The label should automatically move 
-                // any overflow to the next line but in other cases this will need to be the format
-                Session["current"] = 0;
-            }
-
-        }
         private string[] Shuffle(string[] array)
         {
             Random _random = new Random();
