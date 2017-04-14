@@ -26,11 +26,11 @@ namespace Bootstrap_Test
             else
             {
                 Session["current"] = 0;
-                Label1.Text = "Welcome to the Quiz Mania Experience. Gowieuroweiuroweiruwoei. ruwoeiruwoeriuwoeiruwoe. iruwoeiruoweiru";
+                Label1.Text = "Welcome to the Quiz Mania Experience.";
             }
             // Uncomment the next two lines to run without authentication
             //Session["current"] = 0;
-            //Label1.Text = "Welcome to the Quiz Mania Experience. Gowieuroweiuroweiruwoei. ruwoeiruwoeriuwoeiruwoe. iruwoeiruoweiru";  
+            //Label1.Text = "Welcome to the Quiz Mania Experience.";  
         }
 
         protected void SubmitButton_Click(object sender, EventArgs e)

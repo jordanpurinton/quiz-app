@@ -36,14 +36,14 @@
                 </asp:DropDownList>
                     <br />
                     <asp:DropDownList ID="CategoryList" runat="server" ForeColor="Black">
-                        <asp:ListItem>History</asp:ListItem>
+                        <asp:ListItem>Random</asp:ListItem>
                         <asp:ListItem>Sports</asp:ListItem>
                         <asp:ListItem>General Knowledge</asp:ListItem>
                         <asp:ListItem>Music</asp:ListItem>
                         <asp:ListItem>Video Games</asp:ListItem>
                         <asp:ListItem>Film</asp:ListItem>
                         <asp:ListItem>Television</asp:ListItem>
-                        <asp:ListItem>Random</asp:ListItem>
+                        <asp:ListItem>History</asp:ListItem>
                     </asp:DropDownList>
                 </div>
                             <p>

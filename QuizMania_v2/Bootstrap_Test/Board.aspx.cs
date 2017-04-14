@@ -108,8 +108,14 @@ namespace Bootstrap_Test
 
         }
 
-        protected void Button2_Click(object sender, EventArgs e)
+        protected void Button2_Click(object sender, CommandEventArgs e)
         {
+
+            string buttonPressed = e.CommandArgument.ToString();
+            if (buttonPressed == (string)Session["correctAnswer"])
+            {
+                Response.Write("Correct</br>");
+            }
 
             if (Session["current"].ToString().Equals("0"))
             {
@@ -126,8 +132,13 @@ namespace Bootstrap_Test
 
         }
 
-        protected void Button3_Click(object sender, EventArgs e)
+        protected void Button3_Click(object sender, CommandEventArgs e)
         {
+            string buttonPressed = e.CommandArgument.ToString();
+            if (buttonPressed == (string)Session["correctAnswer"])
+            {
+                Response.Write("Correct</br>");
+            }
 
             if (Session["current"].ToString().Equals("0"))
             {
@@ -144,8 +155,13 @@ namespace Bootstrap_Test
 
         }
 
-        protected void Button4_Click(object sender, EventArgs e)
+        protected void Button4_Click(object sender, CommandEventArgs e)
         {
+            string buttonPressed = e.CommandArgument.ToString();
+            if (buttonPressed == (string)Session["correctAnswer"])
+            {
+                Response.Write("Correct</br>");
+            }
 
             if (Session["current"].ToString().Equals("0"))
             {
