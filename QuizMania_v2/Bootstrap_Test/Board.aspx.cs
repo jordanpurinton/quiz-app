@@ -14,16 +14,76 @@ namespace Bootstrap_Test
         protected void Page_Load(object sender, EventArgs e)
         {    
             if ((int)Session["QuestionNum"] != 0)
-            { 
-
-                // get question index (contains question string and answers)
-                ArrayList questionList = (ArrayList)Session["QuestionList"]; 
+            {
+                Random random = new Random();
+                int ran = random.Next(0, 2);
+                ArrayList questionList = (ArrayList)Session["QuestionList"];
                 string questionIndex = (string)questionList[(int)Session["QuestionNum"] - 1];
                 string[] answerArray = questionIndex.Split('|');
+
+                // store and then remove question category from array
+                Session["Category"] = answerArray.ElementAt(0);
+                RemoveAt(ref answerArray, 0);
 
                 // store and then remove question string from array
                 string questionString = answerArray.ElementAt(0);
                 RemoveAt(ref answerArray, 0);
+
+                if ((string)Session["Category"] == "Sports")
+                {
+                    if(ran == 0)
+                        boardImage.Style.Add("background-image", "url(Images/category_images/sports1.jpg)");
+                    else
+                        boardImage.Style.Add("background-image", "url(Images/category_images/sports2.png)");
+
+                }
+                else if((string)Session["Category"] == "General Knowledge")
+                {
+                    if (ran == 0)
+                        boardImage.Style.Add("background-image", "url(Images/category_images/general1.jpg)");
+                    else
+                        boardImage.Style.Add("background-image", "url(Images/category_images/general2.jpg)");
+                }
+
+                else if ((string)Session["Category"] == "Entertainment: Music")
+                {
+                    if (ran == 0)
+                        boardImage.Style.Add("background-image", "url(Images/category_images/music1.jpg)");
+                    else
+                        boardImage.Style.Add("background-image", "url(Images/category_images/music2.jpg)");
+                }
+
+                else if ((string)Session["Category"] == "Entertainment: Video Games")
+                {
+                    if (ran == 0)
+                        boardImage.Style.Add("background-image", "url(Images/category_images/videogames1.jpg)");
+                    else
+                        boardImage.Style.Add("background-image", "url(Images/category_images/videogames2.jpg)");
+                }
+
+                else if ((string)Session["Category"] == "Entertainment: Film")
+                {
+                    if (ran == 0)
+                        boardImage.Style.Add("background-image", "url(Images/category_images/film1.png)");
+                    else
+                        boardImage.Style.Add("background-image", "url(Images/category_images/film2.jpg)");
+                }
+
+                else if ((string)Session["Category"] == "Entertainment: Television")
+                {
+                    if (ran == 0)
+                        boardImage.Style.Add("background-image", "url(Images/category_images/television1.jpg)");
+                    else
+                        boardImage.Style.Add("background-image", "url(Images/category_images/television2.jpg)");
+                }
+
+                else if ((string)Session["Category"] == "History")
+                {
+                    if (ran == 0)
+                        boardImage.Style.Add("background-image", "url(Images/category_images/history1.jpg)");
+                    else
+                        boardImage.Style.Add("background-image", "url(Images/category_images/history2.jpg)");
+                }
 
                 Session["correctString"] = answerArray[0];
                 Response.Write(Session["correctString"] + "</br>");
@@ -36,8 +96,6 @@ namespace Bootstrap_Test
                     for (int i = 0; i < 2; i++)
                     {
                         // randomize the true false questions
-                        Random random = new Random();
-                        int ran = (int)random.NextDouble();
                         if (ran == 0)
                         {
                             Button1.Text = System.Net.WebUtility.HtmlDecode(answerArray[0]);
@@ -95,12 +153,10 @@ namespace Bootstrap_Test
 
             if (Session["current"].ToString().Equals("0"))
             {
-                boardImage.Style.Add("background-image", "url(Images/George.jpg)");
                 Session["current"] = 1;
             }
             else
             {
-                boardImage.Style.Add("background-image", "url(Images/dock.jpg)");
                 // <br /> needs to be used for newlines in label text.  The label should automatically move 
                 // any overflow to the next line but in other cases this will need to be the format
                 Session["current"] = 0;
@@ -119,7 +175,6 @@ namespace Bootstrap_Test
 
             if (Session["current"].ToString().Equals("0"))
             {
-                boardImage.Style.Add("background-image", "url(Images/George.jpg)");
                 Session["current"] = 1;
             }
             else
@@ -142,12 +197,10 @@ namespace Bootstrap_Test
 
             if (Session["current"].ToString().Equals("0"))
             {
-                boardImage.Style.Add("background-image", "url(Images/George.jpg)");
                 Session["current"] = 1;
             }
             else
             {
-                boardImage.Style.Add("background-image", "url(Images/dock.jpg)");
                 // <br /> needs to be used for newlines in label text.  The label should automatically move 
                 // any overflow to the next line but in other cases this will need to be the format
                 Session["current"] = 0;
@@ -165,12 +218,10 @@ namespace Bootstrap_Test
 
             if (Session["current"].ToString().Equals("0"))
             {
-                boardImage.Style.Add("background-image", "url(Images/George.jpg)");
                 Session["current"] = 1;
             }
             else
             {
-                boardImage.Style.Add("background-image", "url(Images/dock.jpg)");
                 // <br /> needs to be used for newlines in label text.  The label should automatically move 
                 // any overflow to the next line but in other cases this will need to be the format
                 Session["current"] = 0;

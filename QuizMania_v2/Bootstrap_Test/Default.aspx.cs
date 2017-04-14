@@ -45,6 +45,7 @@ namespace Bootstrap_Test
 
             for (int i = 0; i < questionNum; i++)
             {
+                string category = questions.Tables[0].Rows[i][1].ToString().Trim();
                 string questionString = questions.Tables[0].Rows[i][4].ToString().Trim();
                 string correctAnswer = questions.Tables[0].Rows[i][5].ToString().Trim();
                 string incorrectAnswer1 = questions.Tables[0].Rows[i][6].ToString().Trim();
@@ -57,12 +58,13 @@ namespace Bootstrap_Test
                                 " | incorrect 3: " + incorrectAnswer3 + "<br />");
                 */
 
-                questionList.Add(questionString + "|" + correctAnswer + "|" + incorrectAnswer1 + "|" + incorrectAnswer2 + "|" + incorrectAnswer3);
+                questionList.Add(category + "|" + questionString + "|" + correctAnswer + "|" + incorrectAnswer1 + "|" + incorrectAnswer2 + "|" + incorrectAnswer3);
             }
             Session["QuestionList"] = questionList;
             Session["Score"] = 0;
 
-            Response.Redirect("Board.aspx");
+
+Response.Redirect("Board.aspx");
         }
 
         protected void Button2_Click(object sender, EventArgs e)

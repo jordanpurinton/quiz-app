@@ -5,7 +5,7 @@
             background-position:center center; background-repeat:no-repeat ">
         <center>
             <div id="textArea" runat="server" style="max-width :50%;overflow-wrap :break-word">
-                        <asp:Label ID="Label1" runat="server" Text="Label used for testing" Font-Size="X-Large" style="text-shadow:5px 5px 5px black"></asp:Label>
+                        <asp:Label ID="Label1" runat="server" Text="Step inside..." Font-Size="X-Large" style="text-shadow:5px 5px 5px black"></asp:Label>
             </div>            
         </center>    
     </div><br />

@@ -216,6 +216,20 @@
     <Content Include="ApplicationInsights.config">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
+    <Content Include="Images\category_images\film1.png" />
+    <Content Include="Images\category_images\film2.jpg" />
+    <Content Include="Images\category_images\general1.jpg" />
+    <Content Include="Images\category_images\general2.jpg" />
+    <Content Include="Images\category_images\history1.jpg" />
+    <Content Include="Images\category_images\history2.jpg" />
+    <Content Include="Images\category_images\music1.jpg" />
+    <Content Include="Images\category_images\music2.jpg" />
+    <Content Include="Images\category_images\sports1.jpg" />
+    <Content Include="Images\category_images\sports2.png" />
+    <Content Include="Images\category_images\television1.jpg" />
+    <Content Include="Images\category_images\television2.jpg" />
+    <Content Include="Images\category_images\videogames1.jpg" />
+    <Content Include="Images\category_images\videogames2.jpg" />
     <Content Include="Images\shock.jpg" />
     <Content Include="Welcome.aspx" />
     <None Include="Scripts\jquery-1.10.2.intellisense.js" />
