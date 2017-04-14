@@ -15,17 +15,19 @@ namespace Bootstrap_Test
         {
             if (!Page.IsPostBack)
             {
+                Session["score"] = 0;
                 GameLoad();
             }
         }
+
         protected void Button1_Click(object sender, CommandEventArgs e)
         {
             string buttonPressed = e.CommandArgument.ToString();
             if (buttonPressed == (string)Session["correctAnswer"])
             {
                 Response.Write("Correct</br>");
+                Session["score"] = (int)Session["score"] + 1;
             }
-
 
             if (Session["current"].ToString().Equals("0"))
             {
@@ -167,7 +169,7 @@ namespace Bootstrap_Test
             }
             else
             {
-                Response.Redirect("About.aspx");
+                Response.Redirect("ScoreTest.aspx");
             }
         }
 
