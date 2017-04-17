@@ -11,14 +11,17 @@ namespace Bootstrap_Test
 	{
 		protected void Page_Load(object sender, EventArgs e)
 		{
-
-		}
+            if (!Page.User.Identity.IsAuthenticated)
+            {
+                Response.Redirect("Account/Login.aspx");
+            }
+        }
 
         protected void SubmitButton_Click(object sender, EventArgs e)
         {
-            string temp_cat = txtCat.Text;
-            string temp_type = txtType.Text;
-            string temp_diff = DropDownList1.Text;
+            string temp_cat = dListCat.Text;
+            string temp_type = dListType.Text;
+            string temp_diff = dListDiff.Text;
             string temp_question = txtQuestion.Text;
             string temp_cAnswer = txtCAnswer.Text;
             string temp_wAnswer1 = txtW1.Text;

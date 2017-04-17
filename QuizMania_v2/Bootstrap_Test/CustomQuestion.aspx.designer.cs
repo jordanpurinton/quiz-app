@@ -13,40 +13,49 @@ namespace Bootstrap_Test {
     public partial class CustomQuestion {
         
         /// <summary>
-        /// txtCat control.
+        /// dListCat control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox txtCat;
+        protected global::System.Web.UI.WebControls.DropDownList dListCat;
         
         /// <summary>
-        /// txtType control.
+        /// sds_cat control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox txtType;
+        protected global::System.Web.UI.WebControls.SqlDataSource sds_cat;
         
         /// <summary>
-        /// DropDownList1 control.
+        /// dListType control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.DropDownList DropDownList1;
+        protected global::System.Web.UI.WebControls.DropDownList dListType;
         
         /// <summary>
-        /// RadioButtonList1 control.
+        /// sds_type control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.RadioButtonList RadioButtonList1;
+        protected global::System.Web.UI.WebControls.SqlDataSource sds_type;
+        
+        /// <summary>
+        /// dListDiff control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.DropDownList dListDiff;
         
         /// <summary>
         /// sds_diff control.

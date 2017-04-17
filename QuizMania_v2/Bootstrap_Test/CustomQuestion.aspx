@@ -2,18 +2,22 @@
 <asp:Content ID="Content1" ContentPlaceHolderID="MainContent" runat="server">
     <h4>Category</h4>
     
-    <asp:TextBox ID="txtCat" runat="server"  Width="80%" TextMode="MultiLine"></asp:TextBox>
+    <asp:DropDownList ID="dListCat" runat="server" DataSourceID="sds_cat" DataTextField="Category" DataValueField="Category">
+    </asp:DropDownList>
+    <asp:SqlDataSource ID="sds_cat" runat="server" ConnectionString="<%$ ConnectionStrings:JordanString %>" SelectCommand="SELECT DISTINCT [Category] FROM [Question]"></asp:SqlDataSource>
     <br />
     <h4>Type</h4>
    
-    <asp:TextBox ID="txtType" runat="server"  Width ="80%" TextMode="MultiLine"></asp:TextBox>
+    <asp:DropDownList ID="dListType" runat="server" DataSourceID="sds_type" DataTextField="Type" DataValueField="Type">
+    </asp:DropDownList>
+    <asp:SqlDataSource ID="sds_type" runat="server" ConnectionString="<%$ ConnectionStrings:JordanString %>" SelectCommand="SELECT DISTINCT [Type] FROM [Question]"></asp:SqlDataSource>
     <br />
     <h4>Difficulty</h4>
     
-    <asp:DropDownList ID="DropDownList1" runat="server" DataSourceID="sds_diff" DataTextField="Difficulty" DataValueField="Difficulty" >
+    <asp:DropDownList ID="dListDiff" runat="server" DataSourceID="sds_diff" DataTextField="Difficulty" DataValueField="Difficulty" >
     </asp:DropDownList>
 
-    <asp:RadioButtonList ID="RadioButtonList1" runat="server" DataSourceID="sds_diff" DataTextField="Difficulty" DataValueField="Difficulty"></asp:RadioButtonList>
+    
     <asp:SqlDataSource ID="sds_diff" runat="server" ConnectionString="<%$ ConnectionStrings:JordanString %>" SelectCommand="SELECT DISTINCT [Difficulty] FROM [Question]"></asp:SqlDataSource>
     <br />
     <h4>Question</h4>
