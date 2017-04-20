@@ -2,7 +2,7 @@
 
 <asp:Content ID="BodyContent" ContentPlaceHolderID="MainContent" runat="server">
 
-    <div ID="boardImage" runat="server" class="jumbotron" style="background-image:url(Images/banner-test.jpg); 
+    <div ID="boardImage" runat="server" class="jumbotron" style="background-image:url(Images/category_images/general2.jpg); 
             background-position:center center; background-size:auto; background-repeat:no-repeat ">
         <center>
             <div id="textArea" runat="server" style="max-width :50%;overflow-wrap :break-word">
@@ -65,7 +65,7 @@
                         <asp:ListItem>Television</asp:ListItem>
                         <asp:ListItem>History</asp:ListItem>
                     </asp:DropDownList>
-                </div>
+                </div><br /><br />
                             <p>
 
                 <asp:Button ID="SubmitButton" runat="server" Text="Submit" Width="90%" 

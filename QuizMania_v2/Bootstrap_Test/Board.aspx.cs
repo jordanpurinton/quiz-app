@@ -27,6 +27,12 @@ namespace Bootstrap_Test
             {
                 Response.Write("Correct</br>");
                 Session["score"] = (int)Session["score"] + 1;
+                ClientScript.RegisterStartupScript(GetType(), "hwa", "toastify('success', 'NICE', 'You answered correctly!', 'toast-top-left');", true);
+            }
+
+            if(buttonPressed != (string)Session["correctAnswer"])
+            {
+                ClientScript.RegisterStartupScript(GetType(), "hwa", "toastify('error', 'WRONG', 'You answered incorrectly!', 'toast-top-left');", true);
             }
 
             if (Session["current"].ToString().Equals("0"))

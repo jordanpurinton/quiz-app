@@ -1,5 +1,6 @@
 ﻿<%@ Page Title="" Language="C#" MasterPageFile="~/Site.Master" AutoEventWireup="true" CodeBehind="Board.aspx.cs" Inherits="Bootstrap_Test.Board" %>
 <asp:Content ID="Content1" ContentPlaceHolderID="MainContent" runat="server">
+     <script src="Scripts/toast-script.js" type="text/javascript"></script>
      <div ID="boardImage" runat="server" class="jumbotron" style="background-image:url(Images/banner-test.jpg); 
                 background-position:center center; background-repeat:no-repeat; background-size:auto ;height:auto">
         <center>

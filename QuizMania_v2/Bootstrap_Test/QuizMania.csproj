@@ -198,6 +198,7 @@
     <Content Include="Account\ResetPasswordConfirmation.aspx" />
     <Content Include="Account\TwoFactorAuthenticationSignIn.aspx" />
     <Content Include="Account\VerifyPhoneNumber.aspx" />
+    <Content Include="Scripts\Toastr.vb" />
     <Content Include="App_Data\quiz-data_Data.mdf" />
     <Content Include="App_Data\quiz-data_Data_log.ldf">
       <DependentUpon>quiz-data_Data.mdf</DependentUpon>
@@ -207,6 +208,8 @@
     <Content Include="Content\bootstrap.css" />
     <Content Include="Content\bootstrap.min.css" />
     <Content Include="Content\Site.css" />
+    <Content Include="Content\toastr.css" />
+    <Content Include="Content\toastr.min.css" />
     <Content Include="CustomQuestion.aspx" />
     <Content Include="Error.aspx" />
     <Content Include="fonts\glyphicons-halflings-regular.svg" />
@@ -216,6 +219,7 @@
     <Content Include="Account\Web.config" />
     <Content Include="ApplicationInsights.config">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+      <SubType>Designer</SubType>
     </Content>
     <Content Include="Images\category_images\film1.png" />
     <Content Include="Images\category_images\film2.jpg" />
@@ -233,7 +237,12 @@
     <Content Include="Images\category_images\videogames2.jpg" />
     <Content Include="Images\shock.jpg" />
     <Content Include="ScoreTest.aspx" />
+    <Content Include="Scripts\toastr.js" />
+    <Content Include="Scripts\toastr.min.js" />
+    <Content Include="Scripts\toast-script.js" />
     <Content Include="Welcome.aspx" />
+    <Content Include="Content\toastr.scss" />
+    <Content Include="Content\toastr.less" />
     <None Include="Scripts\jquery-1.10.2.intellisense.js" />
     <Content Include="Highscores.aspx" />
     <Content Include="Images\banner-test.jpg" />
