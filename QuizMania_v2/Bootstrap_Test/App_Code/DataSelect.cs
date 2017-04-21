@@ -13,22 +13,12 @@ public class DataSelect
     }
 
     
-    public DataSet SelectHighScores()
+    public DataSet SelectHighScores(int Number)
     {
         DataAccess myAccess = new DataAccess();
-
+        SqlParameter parameter = new SqlParameter("Number", Number);
         string query = "spSelectScores";
-        DataSet rows = myAccess.getQuery(query);
-        return rows;
-    }
-    
-
-    public DataSet SelectOrders()
-    {
-        DataAccess myAccess = new DataAccess();
-
-        string query = "spSelectScores";
-        DataSet rows = myAccess.getQuery(query);
+        DataSet rows = myAccess.getQuery(query, parameter);
         return rows;
     }
 
@@ -55,9 +45,9 @@ public class DataSelect
         }
     }
 
-    public Boolean CheckHighScore(int score, string UserId)
+    public Boolean CheckHighScore(int score, string Username)
     {
-        int old_score = SelectHighScore(UserId);
+        int old_score = SelectHighScore(Username);
 
         if (score > old_score)
         {
@@ -69,11 +59,11 @@ public class DataSelect
         }
     }
 
-    public int SelectHighScore(string UserId)
+    public int SelectHighScore(string Username)
     {
         DataAccess myAccess = new DataAccess();
 
-        SqlParameter parameter = new SqlParameter("UserId", UserId);
+        SqlParameter parameter = new SqlParameter("Username", Username);
         string query = "spSelectHighScore";
         int score = 0;
         try

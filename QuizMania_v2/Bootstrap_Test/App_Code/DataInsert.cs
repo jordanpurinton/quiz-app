@@ -13,14 +13,14 @@ public class DataInsert
     }
 
     
-    public void InsertHighScore(int Score, string UserId)
+    public void InsertHighScore(int Score, string Username)
     {
         DateTime DateScored = DateTime.Now;
 
         DataAccess myAccess = new DataAccess();
         SqlParameter[] parameters = new SqlParameter[3];
         parameters[0] = new SqlParameter("Score", Score);
-        parameters[1] = new SqlParameter("UserId", UserId);
+        parameters[1] = new SqlParameter("Username", Username);
         parameters[2] = new SqlParameter("DateScored", DateScored);
 
         string query = "spInsertHighScore";

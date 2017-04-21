@@ -185,9 +185,9 @@ namespace Bootstrap_Test
         {
             DataSelect mySelect = new DataSelect();
             
-            if (mySelect.CheckHighScore((int)Session["score"], User.Identity.GetUserId())) {
+            if (mySelect.CheckHighScore((int)Session["score"], User.Identity.GetUserName())) {
                 DataInsert myInsert = new DataInsert();
-                myInsert.InsertHighScore((int)Session["score"], User.Identity.GetUserId());
+                myInsert.InsertHighScore((int)Session["score"], User.Identity.GetUserName());
             }
         }
 
