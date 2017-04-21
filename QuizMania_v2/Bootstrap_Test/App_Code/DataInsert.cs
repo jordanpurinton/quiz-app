@@ -12,19 +12,22 @@ public class DataInsert
         
     }
 
-    /*
-    public int InsertNewOrder(string ItemList)
+    
+    public void InsertHighScore(int Score, string UserId)
     {
-        DataAccess myAccess = new DataAccess();
-        SqlParameter[] parameters = new SqlParameter[1];
-        //parameters[0] = new SqlParameter("OrderId", OrderId);
-        parameters[0] = new SqlParameter("ItemList", ItemList);
+        DateTime DateScored = DateTime.Now;
 
-        string query = "spInsertNewOrder";
+        DataAccess myAccess = new DataAccess();
+        SqlParameter[] parameters = new SqlParameter[3];
+        parameters[0] = new SqlParameter("Score", Score);
+        parameters[1] = new SqlParameter("UserId", UserId);
+        parameters[2] = new SqlParameter("DateScored", DateScored);
+
+        string query = "spInsertHighScore";
         int rows = myAccess.nonQuery(query, parameters);
-        return rows;
     }
 
+    /*
     public int CreateNewOrder()
     {
         DataAccess myAccess = new DataAccess();

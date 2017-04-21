@@ -54,4 +54,34 @@ public class DataSelect
             return rows;
         }
     }
+
+    public Boolean CheckHighScore(int score, string UserId)
+    {
+        int old_score = SelectHighScore(UserId);
+
+        if (score > old_score)
+        {
+            return true;
+        }
+        else
+        {
+            return false;
+        }
+    }
+
+    public int SelectHighScore(string UserId)
+    {
+        DataAccess myAccess = new DataAccess();
+
+        SqlParameter parameter = new SqlParameter("UserId", UserId);
+        string query = "spSelectHighScore";
+        int score = 0;
+        try
+        {
+            score = (int)myAccess.getQuery(query, parameter).Tables[0].Rows[0][0];
+        }
+        catch(IndexOutOfRangeException e){}
+
+        return score;
+    }
 }

@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Microsoft.AspNet.Identity;
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using System.Linq;
@@ -175,7 +176,18 @@ namespace Bootstrap_Test
             }
             else
             {
-                Response.Redirect("ScoreTest.aspx");
+                CheckScore();
+                Response.Redirect("FinalScore.aspx");
+            }
+        }
+
+        protected void CheckScore()
+        {
+            DataSelect mySelect = new DataSelect();
+            
+            if (mySelect.CheckHighScore((int)Session["score"], User.Identity.GetUserId())) {
+                DataInsert myInsert = new DataInsert();
+                myInsert.InsertHighScore((int)Session["score"], User.Identity.GetUserId());
             }
         }
 

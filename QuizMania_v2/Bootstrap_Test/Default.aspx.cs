@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Microsoft.AspNet.Identity;
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using System.Data;
@@ -62,7 +63,6 @@ namespace Bootstrap_Test
             }
             Session["QuestionList"] = questionList;
             Session["Score"] = 0;
-
 
             Response.Redirect("Board.aspx");
         }
