@@ -35,18 +35,24 @@ namespace QuizMania
 
             int i = 0;
             StringBuilder html = new StringBuilder();
+            html.Append(String.Format(@"
+                <div id='highscoreList'>
+                    <ol>"));
             foreach (var row in scores.Tables[0].Rows)
             {
-                html.Append(String.Format(@"
-                <div style='background: #a5a9ac; color: #000000; text-align: center;'>
-                    <p style='margin: 10px; padding:10px; border-style: solid; border-width: 1px;'>
-                    <b>{3}.</b> {0}&nbsp;&nbsp;|&nbsp;&nbsp;Score: 
-                    {1}&nbsp;&nbsp;|&nbsp;&nbsp;Date: {2}<p>
-                </div>                
+            html.Append(String.Format(@"
+                        <li>
+                            <p><b>{0}</b></p>
+                            <p><b>{1}</b></p>
+                            <p>{2}</p>
+                        </li>          
                 ", scores.Tables[0].Rows[i][1].ToString(), scores.Tables[0].Rows[i][2].ToString(),
-                    scores.Tables[0].Rows[i][3].ToString(), i+1));
-                i += 1;
+                    scores.Tables[0].Rows[i][3].ToString()));
+                i++;
             }
+            html.Append(String.Format(@"
+                    </ol>
+                </div>"));
             lblHighScores.Text = html.ToString();
             
         }
