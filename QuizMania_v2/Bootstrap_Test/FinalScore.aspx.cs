@@ -12,11 +12,9 @@ namespace Bootstrap_Test
     {
         protected void Page_Load(object sender, EventArgs e)
         {
-            lblFinalScore.Text = "You got a score of " + Session["score"] + "!";
+            lblFinalScore.Text = "<p style='font-size: 18px;'>You got a score of " + Session["score"] + "!</p>";
 
             DataSelect mySelect = new DataSelect();
-            Response.Write("Your highscore: " + 
-                mySelect.SelectHighScore(Page.User.Identity.GetUserId()) + "<br>");
         }
     }
 }

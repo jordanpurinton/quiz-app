@@ -26,7 +26,9 @@ namespace Bootstrap_Test
             string buttonPressed = e.CommandArgument.ToString();
             if (buttonPressed == (string)Session["correctAnswer"])
             {
+                /* DEBUG Correct Answer
                 Response.Write("Correct</br>");
+                */
                 Session["score"] = (int)Session["score"] + 1;
                 ClientScript.RegisterStartupScript(GetType(), "hwa", "toastify('success', 'NICE', 'You answered correctly!', 'toast-top-left');", true);
             }
@@ -125,7 +127,9 @@ namespace Bootstrap_Test
                 }
 
                 Session["correctString"] = answerArray[0];
+                /* DEBUG Correct Answer
                 Response.Write(Session["correctString"] + "</br>");
+                */
 
                 // check if the question is true/false
                 if (answerArray[2] == "" && answerArray[3] == "")
@@ -160,9 +164,11 @@ namespace Bootstrap_Test
                         if (answerArray[i] == (string)Session["correctString"])
                         {
                             Session["correctAnswer"] = i.ToString();
+                            /* DEBUG Correct Answer
                             Response.Write(i.ToString() + "</br>");
-                        }
-                    }
+                            */
+            }
+        }
                     Button1.Text = System.Net.WebUtility.HtmlDecode(answerArray[0]);
                     Button2.Text = System.Net.WebUtility.HtmlDecode(answerArray[1]);
                     Button3.Text = System.Net.WebUtility.HtmlDecode(answerArray[2]);
@@ -177,7 +183,7 @@ namespace Bootstrap_Test
             else
             {
                 CheckScore();
-                Response.Redirect("FinalScore.aspx");
+                Server.Transfer("FinalScore.aspx");
             }
         }
 
