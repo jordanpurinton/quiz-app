@@ -15,6 +15,7 @@
     <link href="~/favicon.ico" rel="shortcut icon" type="image/x-icon" />
 
     <link href="Content/toastr.min.css" rel="stylesheet" />
+    <link href="Content/main.css" rel="stylesheet" />
     <script src="http://code.jquery.com/jquery.js"></script>
     <script src="Scripts/toastr.min.js"></script>
     <script src="Scripts/toast-script.js"></script>

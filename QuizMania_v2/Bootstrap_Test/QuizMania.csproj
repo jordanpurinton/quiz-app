@@ -198,6 +198,7 @@
     <Content Include="Account\ResetPasswordConfirmation.aspx" />
     <Content Include="Account\TwoFactorAuthenticationSignIn.aspx" />
     <Content Include="Account\VerifyPhoneNumber.aspx" />
+    <Content Include="Content\main.css" />
     <Content Include="Scripts\Toastr.vb" />
     <Content Include="App_Data\quiz-data_Data.mdf" />
     <Content Include="App_Data\quiz-data_Data_log.ldf">
