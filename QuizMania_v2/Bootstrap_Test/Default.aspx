@@ -6,8 +6,9 @@
             background-position:center center; background-size:auto; background-repeat:no-repeat ">
         <center>
             <div id="textArea" runat="server" style="max-width :50%;overflow-wrap :break-word">
-                        <asp:Label ID="Label1" runat="server" Text="Label used for testing" Font-Size="X-Large" style="text-shadow:5px 5px 5px black"></asp:Label>
-
+            <p style="background-color:rgba(0,0,0,0.7); border-radius:10px">
+                <asp:Label ID="Label1" runat="server" Text="Label used for testing" Font-Size="X-Large" style="text-shadow:5px 5px 5px black"></asp:Label>
+            </p>
             </div>
             
         </center>    
