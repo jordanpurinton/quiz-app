@@ -13,26 +13,15 @@ namespace QuizMania
     {
         protected void Page_Load(object sender, EventArgs e)
         {
-            // Comment out the "if" statement to run without authentication
-
-            /*
-            if (!Page.User.Identity.IsAuthenticated)
-            {
-                Response.Redirect("Account/Login.aspx");
-            }*/
-
             ListScores();
-
         }
 
         private void ListScores()
         {
-            // Need to update stored procedures
-            
+            int count = Convert.ToInt32(Request.QueryString["count"]);
             DataSelect mySelect = new DataSelect();
-            DataSet scores = mySelect.SelectHighScores(10);
+            DataSet scores = mySelect.SelectHighScores(count);
             
-
             int i = 0;
             StringBuilder html = new StringBuilder();
             html.Append(String.Format(@"
@@ -58,33 +47,8 @@ namespace QuizMania
 
         protected void btnLoadMore_Click(object sender, EventArgs e)
         {
-            // Need to update stored procedures
-
-            DataSelect mySelect = new DataSelect();
-            DataSet scores = mySelect.SelectHighScores(110);
-
-
-            int i = 0;
-            StringBuilder html = new StringBuilder();
-            html.Append(String.Format(@"
-                <div id='highscoreList'>
-                    <ol>"));
-            foreach (var row in scores.Tables[0].Rows)
-            {
-                html.Append(String.Format(@"
-                        <li>
-                            <p><b>{0}</b></p>
-                            <p><b>{1}</b></p>
-                            <p>{2}</p>
-                        </li>          
-                ", scores.Tables[0].Rows[i][1].ToString(), scores.Tables[0].Rows[i][2].ToString(),
-                        scores.Tables[0].Rows[i][3].ToString()));
-                i++;
-            }
-            html.Append(String.Format(@"
-                    </ol>
-                </div>"));
-            lblHighScores.Text = html.ToString();
+            int count = Convert.ToInt32(Request.QueryString["count"]) + 100;
+            Response.Redirect(String.Format(@"Highscores.aspx?count={0}", count));
         }
     }
 }
