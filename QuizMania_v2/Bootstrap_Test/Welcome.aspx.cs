@@ -11,7 +11,10 @@ namespace Bootstrap_Test
     {
         protected void Page_Load(object sender, EventArgs e)
         {
-
+            if (Page.User.Identity.IsAuthenticated)
+            {
+                Response.Redirect("~/");
+            }
         }
 
         protected void Button1_Click(object sender, EventArgs e)
