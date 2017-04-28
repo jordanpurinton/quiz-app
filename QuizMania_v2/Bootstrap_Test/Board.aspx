@@ -5,11 +5,7 @@
                 background-position:center center; background-repeat:no-repeat; background-size:auto ;height:auto">
         <center>
             <div id="textArea" runat="server" style="max-width:75%;overflow-wrap :break-word">
-            <p style="background-color:rgba(0,0,0,0.7); border-radius:10px"> 
-                <asp:Label ID="questionLabel" runat="server" Font-Size="X-Large" style="text-shadow:5px 5px 5px black">
-                    
-                </asp:Label>
-            </p> 
+                <asp:Label ID="questionLabel" runat="server" Font-Size="X-Large" style="text-shadow:5px 5px 5px black"></asp:Label>
             </div>
         </center>    
     </div>
