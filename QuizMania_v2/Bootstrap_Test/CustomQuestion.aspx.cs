@@ -19,6 +19,7 @@ namespace Bootstrap_Test
 
         protected void SubmitButton_Click(object sender, EventArgs e)
         {
+
             string temp_cat = dListCat.Text;
             string temp_type = dListType.Text;
             string temp_diff = dListDiff.Text;
@@ -27,10 +28,23 @@ namespace Bootstrap_Test
             string temp_wAnswer1 = txtW1.Text;
             string temp_wAnswer2 = txtW2.Text;
             string temp_wAnswer3 = txtW3.Text;
+            if (txtCAnswer.Text == "" || txtQuestion.Text == "" || txtW1.Text == "")
+            {
+                txtError.Text = "Please complete the form, dog";
 
-            Question question = new Question(temp_cat, temp_type, temp_diff, temp_question, temp_cAnswer, temp_wAnswer1, temp_wAnswer2, temp_wAnswer3);
-            question.AddQuestion(question.category, question.type, question.difficulty, question.qString, question.cAnswer, question.wAnswer1, question.wAnswer2, question.wAnswer3);
-            ClientScript.RegisterStartupScript(GetType(), "hwa", "toastify('success', 'NICE', 'Question submitted successfully!', 'toast-top-left');", true);
+            }
+            else
+            {
+                Question question = new Question(temp_cat, temp_type, temp_diff, temp_question, temp_cAnswer, temp_wAnswer1, temp_wAnswer2, temp_wAnswer3);
+                question.AddQuestion(question.category, question.type, question.difficulty, question.qString, question.cAnswer, question.wAnswer1, question.wAnswer2, question.wAnswer3);
+                ClientScript.RegisterStartupScript(GetType(), "hwa", "toastify('success', 'NICE', 'Question submitted successfully!', 'toast-top-left');", true);
+
+                txtCAnswer.Text = "";
+                txtQuestion.Text = "";
+                txtW1.Text = "";
+                txtW2.Text = "";
+                txtW3.Text = "";
+            }
         }
     }
 }

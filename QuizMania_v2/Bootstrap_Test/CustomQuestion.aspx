@@ -2,19 +2,19 @@
 <asp:Content ID="Content1" ContentPlaceHolderID="MainContent" runat="server">
     <h4>Category</h4>
     
-    <asp:DropDownList ID="dListCat" runat="server" DataSourceID="sds_cat" DataTextField="Category" DataValueField="Category">
+    <asp:DropDownList ID="dListCat" runat="server" DataSourceID="sds_cat" DataTextField="Category" DataValueField="Category" ForeColor="Black">
     </asp:DropDownList>
     <asp:SqlDataSource ID="sds_cat" runat="server" ConnectionString="<%$ ConnectionStrings:JordanString %>" SelectCommand="SELECT DISTINCT [Category] FROM [Question]"></asp:SqlDataSource>
     <br />
     <h4>Type</h4>
    
-    <asp:DropDownList ID="dListType" runat="server" DataSourceID="sds_type" DataTextField="Type" DataValueField="Type">
+    <asp:DropDownList ID="dListType" runat="server" DataSourceID="sds_type" DataTextField="Type" DataValueField="Type" ForeColor="Black">
     </asp:DropDownList>
     <asp:SqlDataSource ID="sds_type" runat="server" ConnectionString="<%$ ConnectionStrings:JordanString %>" SelectCommand="SELECT DISTINCT [Type] FROM [Question]"></asp:SqlDataSource>
     <br />
     <h4>Difficulty</h4>
     
-    <asp:DropDownList ID="dListDiff" runat="server" DataSourceID="sds_diff" DataTextField="Difficulty" DataValueField="Difficulty" >
+    <asp:DropDownList ID="dListDiff" runat="server" DataSourceID="sds_diff" DataTextField="Difficulty" DataValueField="Difficulty" ForeColor="Black" >
     </asp:DropDownList>
 
     
@@ -43,5 +43,8 @@
     <br />
     <asp:Button ID="SubmitButton" runat="server" Text="Submit" Width="80%" 
                     style="background-color:greenyellow;border-radius:10px;text-shadow:1px 1px 1px green" OnClick="SubmitButton_Click" Height="50px"/>
+
+    <br />
+    <asp:Label ID="txtError" runat="server" ForeColor="Red"></asp:Label>
 
 </asp:Content>
