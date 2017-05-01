@@ -30,6 +30,7 @@ namespace Bootstrap_Test
 
             Question question = new Question(temp_cat, temp_type, temp_diff, temp_question, temp_cAnswer, temp_wAnswer1, temp_wAnswer2, temp_wAnswer3);
             question.AddQuestion(question.category, question.type, question.difficulty, question.qString, question.cAnswer, question.wAnswer1, question.wAnswer2, question.wAnswer3);
+            ClientScript.RegisterStartupScript(GetType(), "hwa", "toastify('success', 'NICE', 'Question submitted successfully!', 'toast-top-left');", true);
         }
     }
 }
